@@ -3,12 +3,13 @@ let precioJuego;
 let generoJuego;
 let respuesta;
 let nombree;
+let oferta;
 
 
 const juegos =[
-{nombre:"Silent Hill",precio:100,genero:"terror"},
-{nombre:"Resident Evil",precio:90,genero:"terror"},
-{nombre:"Sea of Thieves",precio:300,genero:"aventura"}];
+{nombre:"silent hill",precio:100,genero:"terror"},
+{nombre:"resident evil",precio:90,genero:"terror"},
+{nombre:"sea of thieves",precio:300,genero:"aventura"}];
 
 class Juego{
    constructor(nombre, precio, genero) {
@@ -93,26 +94,28 @@ validarsn();
 while (respuesta=="s")
 {
 nombree=prompt("ingrese el nombre del juego Actualmente en oferta se encuentran Silent hill - Resident Evil - Sea of Thieves");
-nombre=nombree.toLocaleLowerCase();
+nombree=nombree.toLocaleLowerCase();
 
 switch(nombree){
     case "silent hill":
        alert("Juego: Silent hill - Genero : Terror - Precio 100 AR$. Ha sido agregado")
     total=total+100;
+    alert("Total hasta el momento es de: "+total+"AR$");
     break;
     case "resident evil":
       alert("Juego: Resident Evil - Genero : Terror - Precio 90 AR$. Ha sido agregado")
     total=total+90;
+    alert("Total hasta el momento es de: "+total+"AR$");
     break;
     case "sea of thieves":
       alert("Juego: Sea of Thieves - Genero : Aventura - Precio 300 AR$. Ha sido agregado")
     total=total+300;
+    alert("Total hasta el momento es de: "+total+"AR$");
     break;
     default:
     alert("error");
     break;
 }
-
 
 
 respuesta=prompt("quiere seguir agregando juegos s/n?");
