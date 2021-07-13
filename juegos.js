@@ -115,15 +115,7 @@ segundoFormulario.addEventListener("submit",validarFormularioDos);
 // DOM
 console.dir(document.body);
 
-//juegos
-
-   for (let i = 0; i < juegos.length; i++) {
-      console.log(juegos[i]);
-      
-   }
-
-   console.log("ordenados queda de esta forma");
-   console.log(juegos.sort(ret));
+//juegoss
 
    function baratos () {
       const juegosBaratos = juegos.filter(elemento => elemento.precio <= 200);
