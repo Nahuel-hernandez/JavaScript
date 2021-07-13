@@ -18,7 +18,39 @@ const juegos =[
    {nombre:"dead space",precio:150,genero:"terror",id:15}];
 
 let carrito = [];
- 
+
+
+//eventos
+
+for (let i=0;i<juegos.length;i++){
+const contenedorProducto = document.getElementById('productos') // selecciono el section
+
+const div = document.createElement('div')
+div.className="card"
+div.innerHTML= `
+							<h1> ${juegos[i].nombre} </h1>
+
+							<p> Precio: ${juegos[i].precio} </p>
+
+							<p> Género: ${juegos[i].genero} </p>
+
+                     <button id="botompra${juegos[i].id}"> Comprar Juego </button> 
+
+`
+contenedorProducto.appendChild(div)
+
+let compra = document.getElementById(`botompra${juegos[i].id}`);
+console.log(juegos[i].id);
+
+compra.addEventListener('click', () => {
+   agregarCarrito(juegos[i].id)
+})
+}
+
+
+
+
+
 
 let perfil = localStorage.getItem("usuario");
 console.log(perfil);
@@ -60,7 +92,7 @@ let usuario = document.getElementById("modcuenta");
 usuario.innerHTML += `
 <li><a id=cuenta href="cuenta.html">Cuenta</a>
       <ul class="options">
-            <li><a href="carrito.html">Carrito de compra</a></li>
+            <li><a id="carro" href="">Carrito de compra</a></li>
             <li><a id="disconect" href="">Desconectar</a></li>
       </ul>
       `
@@ -68,8 +100,10 @@ usuario.innerHTML += `
       cuenta.innerText = (localStorage.getItem("usuario"));
       const disc = document.getElementById("disconect");
       disc.onclick = () => localStorage.clear();
-      
+      let carro = document.getElementById("carro");
+      carro.onclick = () => VerCarrito();
       }
+     
 //eventos
 
 let primerFormulario = document.getElementById("formulario1");
@@ -78,12 +112,39 @@ primerFormulario.addEventListener("submit", validarFormularioUno);
 let segundoFormulario = document.getElementById("formulario2");
 segundoFormulario.addEventListener("submit",validarFormularioDos);
 
-
 // DOM
 console.dir(document.body);
 
-   //Funciones
+//juegos
 
+   for (let i = 0; i < juegos.length; i++) {
+      console.log(juegos[i]);
+      
+   }
+
+   console.log("ordenados queda de esta forma");
+   console.log(juegos.sort(ret));
+
+   function baratos () {
+      const juegosBaratos = juegos.filter(elemento => elemento.precio <= 200);
+      console.log("los juegos en oferta son ");
+      console.log(juegosBaratos);
+   }
+
+function agregarCarrito(id) {
+   const juegoComprado = juegos.find(elemento => elemento.id == id);
+   carrito.push(juegoComprado);
+   console.log(carrito);
+}
+
+
+function VerCarrito() {
+   console.log("este es el carrito actualmente");
+
+   localStorage.setItem("Juego",JSON.stringify(carrito));
+
+}
+   
 function validarsn(){
 while ((respuesta !=="s")&&(respuesta !=="n"))
 {
