@@ -1,6 +1,6 @@
 let total=0;
 let idJuego;
-const juegos =[
+/*const juegos =[
    {nombre:"silent hill",precio:100,genero:"terror",id:1},
    {nombre:"resident evil",precio:90,genero:"terror",id:2},
    {nombre:"sea of thieves",precio:300,genero:"aventura",id:3},
@@ -15,14 +15,14 @@ const juegos =[
    {nombre:"doom",precio:400,genero:"accion",id:12},
    {nombre:"dark souls",precio:200,genero:"accion",id:13},
    {nombre:"alien isolation",precio:300,genero:"terror",id:14},
-   {nombre:"dead space",precio:150,genero:"terror",id:15}];
+   {nombre:"dead space",precio:150,genero:"terror",id:15}];*/
 
 let carrito = [];
 
 
 //eventos
 
-for (let i=0;i<juegos.length;i++){
+/*for (let i=0;i<juegos.length;i++){
 const contenedorProducto = document.getElementById('productos') // selecciono el section
 
 const div = document.createElement('div')
@@ -46,10 +46,32 @@ compra.addEventListener('click', () => {
    agregarCarrito(juegos[i].id)
 })
 }
+*/
+
+//ajax
 
 
 
+const URLJSON="juegos.js";
 
+$.getJSON(URLJSON, function (respuesta, estado) {
+   if(estado == "success"){
+   let misDatos = respuesta;
+   for (const dato of misDatos) {
+   $("#productos").prepend(`<div class="card" >
+   <h1> ${juegos[i].nombre} </h1>
+
+   <p> Precio: ${juegos[i].precio} </p>
+
+   <p> Género: ${juegos[i].genero} </p>
+
+   <button id="botompra${juegos[i].id}"> Comprar Juego </button> 
+
+
+   </div>`)
+}
+}    
+});
 
 
 let perfil = localStorage.getItem("usuario");
@@ -92,7 +114,7 @@ let usuario = document.getElementById("modcuenta");
 usuario.innerHTML += `
 <li><a id=cuenta href="cuenta.html">Cuenta</a>
       <ul class="options">
-            <li><a id="carro" href="">Carrito de compra</a></li>
+            <li><a id="carro" href="carrito.html">Carrito de compra</a></li>
             <li><a id="disconect" href="">Desconectar</a></li>
       </ul>
       `
@@ -127,7 +149,9 @@ function agregarCarrito(id) {
    const juegoComprado = juegos.find(elemento => elemento.id == id);
    carrito.push(juegoComprado);
    console.log(carrito);
-}
+   
+
+};
 
 
 function VerCarrito() {
