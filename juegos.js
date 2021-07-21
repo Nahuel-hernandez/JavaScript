@@ -52,12 +52,12 @@ compra.addEventListener('click', () => {
 
 
 
-const URLJSON="juegos.js";
+const URLJSON="juegos.json";
 
 $.getJSON(URLJSON, function (respuesta, estado) {
    if(estado == "success"){
-   let misDatos = respuesta;
-   for (const dato of misDatos) {
+   let juegos = respuesta.juegos;
+   for (let i=0;i<juegos.length;i++) {
    $("#productos").prepend(`<div class="card" >
    <h1> ${juegos[i].nombre} </h1>
 
@@ -69,7 +69,15 @@ $.getJSON(URLJSON, function (respuesta, estado) {
 
 
    </div>`)
+   let compra = document.getElementById(`botompra${juegos[i].id}`);
+console.log(juegos[i]);
+
+compra.addEventListener('click', () => {
+   agregarCarrito(juegos[i])
 }
+
+)}
+
 }    
 });
 
@@ -145,9 +153,8 @@ console.dir(document.body);
       console.log(juegosBaratos);
    }
 
-function agregarCarrito(id) {
-   const juegoComprado = juegos.find(elemento => elemento.id == id);
-   carrito.push(juegoComprado);
+function agregarCarrito(juegos) {
+   carrito.push(juegos);
    console.log(carrito);
    
 
