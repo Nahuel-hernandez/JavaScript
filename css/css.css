@@ -5,6 +5,14 @@ html {
     font-size: 200%;
     text-decoration: underline; }
 
+.card {
+  font-size: 90%; }
+
+.botompra {
+  background-color: rgba(129, 67, 67, 0.12);
+  font-size: 130%;
+  color: snow; }
+
 /* body */
 body {
   background-image: linear-gradient(180deg, #b32929 0%, black 42%, #a44de7 100%);
