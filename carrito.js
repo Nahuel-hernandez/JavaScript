@@ -1,46 +1,28 @@
 let total=0;
-let idJuego;
+
+
 let carrito = [];
-let contador=0;
-
-
-//ajax
 
 
 
-const URLJSON="juegos.json";
-$.getJSON(URLJSON, function (respuesta, estado) {
-   if(estado == "success"){
-   let juegos = respuesta.juegos;
-   for (let i=0;i<juegos.length;i++) {
-   $("#productos").append(`<div class="card"> <br>
-   <h1> ${juegos[i].nombre} </h1>
 
-   <p> Precio: ${juegos[i].precio} </p>
+$('#saludo').append(`<h2>Hola Gamer, Bienvenido al carrito</h2>
+<t id="guia">Para poder ver los juegos que compraste por favor toca el boton aqui abajo</t><br><br>
+<h2 id="buelec" style="display: none">..:::Buena eleccion de juegos, listo para la aventura?:::.. </h2>
+<button id="mostrarCarrito">Quiero ver mi carrito</button><br>
+`);
 
-   <p> Género: ${juegos[i].genero} </p>
-
-   <a> Trailer:<br> ${juegos[i].trailer} </a><br>
-
-   <button id="botompra${juegos[i].id}" class="botompra"> Comprar Juego </button> 
+$('#mostrarCarrito').on('click', mostrarCarro);
 
 
-   </div><br><br>`)
-   let compra = document.getElementById(`botompra${juegos[i].id}`);
-console.log(juegos[i]);
 
-compra.addEventListener('click', () => {
-   agregarCarrito(juegos[i])
-}
 
-)}
-
-}    
-});
-
+//eventos
 
 let perfil = localStorage.getItem("usuario");
 console.log(perfil);
+
+//Menu
 
 if (perfil==null){
 let modalCuenta = document.getElementById("modcuenta")
@@ -79,7 +61,7 @@ let usuario = document.getElementById("modcuenta");
 usuario.innerHTML += `
 <li><a id=cuenta href="">Cuenta</a>
       <ul class="options">
-            <li><a id="carro" href="carrito.html">Carrito de compra</a></li>
+            <li><a id="carro" href="">Carrito de compra</a></li>
             <li><a id="disconect" href="">Desconectar</a></li>
       </ul>
       `
@@ -104,21 +86,48 @@ console.dir(document.body);
 
 //juegoss
 
+function mostrarCarro(){
+    carrito = JSON.parse(localStorage.getItem("Juego"));
+
+console.log(carrito);
+
+for (i=0;i<carrito.length;i++){
+$('#carroCompra').append(` <div>
+
+                            <h1> ${carrito[i].nombre} </h1>
+
+							<p> Precio: ${carrito[i].precio} </p>
+
+							<p> Género: ${carrito[i].genero} </p>
+
+                            </div><br><br>
+                    `
+);
+total=total+carrito[i].precio;
+}
+$('#carroCompra').prepend(`<h2> Su total a pagar es AR$ ${total}<h2><br><br>`);
+$('#mostrarCarrito').css({display:"none"});
+$("#guia").css({display:"none"});
+$("h2").show();
+$("#buelec").css({
+   color:"cyan",
+   font:"10px",
+   padding:"80px"
+})
+
+}
+
    function baratos () {
       const juegosBaratos = juegos.filter(elemento => elemento.precio <= 200);
       console.log("los juegos en oferta son ");
       console.log(juegosBaratos);
    }
 
-function agregarCarrito(juegos) {
-   carrito.push(juegos);
+function agregarCarrito(id) {
+   const juegoComprado = juegos.find(elemento => elemento.id == id);
+   carrito.push(juegoComprado);
    console.log(carrito);
-   
-   contador++;
-   $(".card").append(`<br><t>Recuerde que ya ha comprado ${juegos.nombre} hasta el momento</t> `)
-   
-
-};
+}
 
 
 function VerCarrito() {

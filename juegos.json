@@ -2,93 +2,108 @@
     [
         
         {
-    "nombre":"silent hill",
+    "nombre":"Silent Hill Homecoming",
     "precio":100,
     "genero":"terror",
+    "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/za2iYFR-FhI \"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
     "id":1
 },
     {
-        "nombre":"resident evil",
+        "nombre":"Resident Evil 3: Nemesis",
         "precio":90,
         "genero":"terror",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/djjHZoDIvSY\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":2
     },
     {
-        "nombre":"sea of thieves",
+        "nombre":"Sea of Thieves",
         "precio":300,
         "genero":"aventura",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/1z48qvGsA_0\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":3
     },
     {
-        "nombre":"rainbox six",
+        "nombre":"Rainbox Six",
         "precio":100,
         "genero":"fps",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ZH0VC-MTAzE\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":4
     },
     {
-        "nombre":"world of warcraft",
+        "nombre":"World of Warcraft: Shadowlands",
         "precio":500,
         "genero":"mmorpg",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/s4gBChg6AII\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":5
     },
     {
-        "nombre":"tomb raider",
+        "nombre":"Tomb Raider: Shadow of Tomb Raider",
         "precio":120,
         "genero":"accion",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/XYtyeqVQnRI\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":6
     },
     {
-        "nombre":"need for speed",
+        "nombre":"Need for Speed Heat",
         "precio":200,
         "genero":"carreras",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/9ewiJJe_nYI\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":7
     },
     {
-        "nombre":"counter strike",
+        "nombre":"Counter Strike Global Offensive",
         "precio":80,
         "genero":"fps",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/edYCtaNueQY\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":8
     },
     {
-        "nombre":"eurotruck simulator",
+        "nombre":"Eurotruck Simulator 2",
         "precio":70,
         "genero":"simulador",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/xlTuC18xVII\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":9
     },
     {
-        "nombre":"mortal kombat",
+        "nombre":"The Witcher 3: Wild Hunt",
         "precio":270,
         "genero":"accion",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/c0i88t0Kacs\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":10
     },
     {
-        "nombre":"life is strange",
+        "nombre":"Life is Strange",
         "precio":180,
         "genero":"aventura",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/AURVxvIZrmU\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":11
     },
     {
-        "nombre":"doom",
+        "nombre":"Doom",
         "precio":400,
         "genero":"accion",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/SgSrpnW0EmU\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":12
     },
     {
-        "nombre":"dark souls",
+        "nombre":"Dark Souls 3",
         "precio":200,
         "genero":"accion",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/0RAlGv-IW4g\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":13
     },
     {
-        "nombre":"alien isolation",
+        "nombre":"Alien Isolation",
         "precio":300,
         "genero":"terror",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/I2-YlCSz-DU\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":14
     },
     {
-        "nombre":"dead space",
+        "nombre":"Dead Space",
         "precio":150,
         "genero":"terror",
+        "trailer":"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/71MZlPqChX4\"  title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
         "id":15
         }
     

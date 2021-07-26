@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <title>Informacion sobre el Team TRP</title>
+    <link rel="stylesheet" href="css/css.css" />
+    <meta name="keywords" content="informacion,about,historia">
+    <meta name="description" content="Pagina oficial de streamers que conforman al team trp">
+</head>
+<body>
+    <!--Menu-->
+    <div class="encabezado-de-pagina">
+        <img src="media/logo.png" alt="logo trp" class="encabezado-de-pagina__logo-pagina">&nbsp;&nbsp;
+        <div><ul id="modcuenta" class="menu-encabezado alinearGrid">
+            <li><a href="redes.html">Redes</a></li>
+            <li><a href="juegos.html">juegos</a></li>
+        </div>   
+        <t class="encabezado-de-pagina__trp-grande">T.R.P. STORE</t>
+        </div>
+
+    <!-- texto -->
+<div class="textinfo flexColumnaDerecha">
+<h1 class="textinfo__sobre-nosotros centrar">Sobre nosotros</h1>
+<p class="textinfo__parrafo-uno centrar">The Red Patrol - mas conocido como la T.R.P. es un grupo de amigos, que se conocieron en este contexto mundial de pandemia, se fueron uniendo uno a uno conociéndoce en la plataforma twitch.</p>
+<p class="textinfo__parrafo-dos centrar">Si bien hay mucha afinidad y buena onda con varios streamers del entorno, solo 4 conforman a la T.R.P. ya que para poder unirse al Team hay que tener algunas cualidades particulares, y principalmente caerle bien a todos y cada uno de los miembros, sin excepcion.</p> 
+<p class="textinfo__parrafo-tres centrar">Esto se dio debido a que EX miembros fueron unidos por pura amistad con la mayaria y no la totalidad, haciendo que mas temprano que tarde el grupo se partiera.</p>
+<p class="textinfo__parrafo-cuatro centrar">Si bien al principio todo comenzo como una simple broma donde nos auto-proclamamos T.R.P. por llegar al rango mas alto en Dead by Daylight con el tiempo comenzaron a reconocernos en diferentes streams como grupo logrando asi preguntarnos ... ¿ y porque no ? </p>
+<P class="textinfo__parrafo-cinco centrar">Desde ese momento comenzamos a ponernos de tag -[T.R.P.]- || nombre en diversos juegos , logrando ser reconocidos como tambien odiados por las personas que jugaban con nosotros o en nuestra contra.</P>
+<p class="textinfo__parrafo-seis centrar">Actualmente estamos en crecimiento y en cambios constantes en cuanto a contenidos en stream , youtube , redes y como veran en esta store, nuestra idea en cuanto a la venta de juegos es unir a las personas, ya que al ser los juegos quienes nos unieron, queremos que mas historias como la nuestra nazcan y que mejor que dar un pequeño empujon para lograrlo.</p><br><br><br>
+</div>
+<br><br>
+
+<!--pie de pagina-->
+
+<footer>
+
+ <!--pie de pagina-->
+ <div class="pie-de-pagina" > 
+    <a href="informacion.html" class="pie-de-pagina__informacion">Información</a> <br>
+    <a href="Mapadesitio.html"class="pie-de-pagina__mapa">Mapa del sitio</a><br>
+<!-- Modal Mail -->
+    <a data-toggle="modal" data-target="#myModal" class="pie-de-pagina__mail" href="">Mail de contacto</a> 
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">    
+                <div class="modal-header">
+                    <h4 class="modal-title">Ponte en contacto con nosotros</h4>
+                    <button type="button" class="close" data-dismiss="modal" id="botonClose">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="formulario1">
+                        <legend>Informacion personal</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Nombre</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Apellido</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Mail</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Ingrese su mail">
+                        </div>
+                    </fieldset>
+<!--texto a enviarnos-->
+                        <p>¿Que le gustaria decirnos?</p>
+                        <textarea rows="5" cols="35" id="textAreaUno"></textarea><br><br>
+                        <input type="submit" value="Enviar comentario" />
+                        <input type="reset" value="Borrar Comentario" />
+                    </form>
+                </div>    
+            </div>
+        </div>
+    </div>
+<!-- Modal recomendaciones -->
+<a data-toggle="modal" data-target="#myModal2" class="pie-de-pagina__recomendaciones"href="">Recomendaciones</a>
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content">    
+            <div class="modal-header">
+                <h5 class="modal-title">Que te gustaria Recomendarnos?</h5>
+                <button type="button" class="close" data-dismiss="modal" id="botonClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formulario2">
+                    <label for="nombre">Nombre:</label>
+                    <input type="name" nombre="nombre" id="nombre"/><br><br>
+                    <P>Escribinos tu Recomendacion</P>
+                    <textarea rows="5" cols="35" id="textAreaDos"></textarea><br><br>
+                    <input type="submit" value="Enviar sugerencia">
+                    <input type="reset" value="Borrar sugerencia">
+                </form>
+            </div>    
+        </div>
+    </div>
+</div>
+<img src="media/mail.png" class="pie-de-pagina__icono-mail">
+<img src="media/info.png" class="pie-de-pagina__icono-info">
+<img src="media/reco.png" class="pie-de-pagina__icono-reco">
+<img src="media/mapa.png" class="pie-de-pagina__icono-mapa">
+<t class="pie-de-pagina__slogan alinearGridCentro">NUNCA DESAFIES A UN TRP SI TU INTENCION ES SALIR VICTORIOSO DE ESE CAMPO DE BATALLA</t>
+</div>
+<a href="index.html" alt="logo trp"><img src="media/logo.png" class="logo-dos"></a>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+<script src="javaScript.js" ></script>
+</body>
+</html>

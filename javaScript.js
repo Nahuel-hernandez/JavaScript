@@ -1,24 +1,3 @@
-let total=0;
-let idJuego;
-const juegos =[
-   {nombre:"silent hill",precio:100,genero:"terror",id:1},
-   {nombre:"resident evil",precio:90,genero:"terror",id:2},
-   {nombre:"sea of thieves",precio:300,genero:"aventura",id:3},
-   {nombre:"rainbox six",precio:100,genero:"fps",id:4},
-   {nombre:"world of warcraft",precio:500,genero:"mmorpg",id:5},
-   {nombre:"tomb raider",precio:120,genero:"accion",id:6},
-   {nombre:"need for speed",precio:200,genero:"carreras",id:7},
-   {nombre:"counter strike",precio:80,genero:"fps",id:8},
-   {nombre:"eurotruck simulator",precio:70,genero:"simulador",id:9},
-   {nombre:"mortal kombat",precio:270,genero:"accion",id:10},
-   {nombre:"life is strange",precio:180,genero:"aventura",id:11},
-   {nombre:"doom",precio:400,genero:"accion",id:12},
-   {nombre:"dark souls",precio:200,genero:"accion",id:13},
-   {nombre:"alien isolation",precio:300,genero:"terror",id:14},
-   {nombre:"dead space",precio:150,genero:"terror",id:15}];
-
-let carrito = [];
- 
 
 let perfil = localStorage.getItem("usuario");
 console.log(perfil);
@@ -58,7 +37,7 @@ modalCuenta.innerHTML += `
 else{
 let usuario = document.getElementById("modcuenta");
 usuario.innerHTML += `
-<li><a id=cuenta href="cuenta.html">Cuenta</a>
+<li><a id=cuenta href="">Cuenta</a>
       <ul class="options">
             <li><a href="carrito.html">Carrito de compra</a></li>
             <li><a id="disconect" href="">Desconectar</a></li>
@@ -98,16 +77,6 @@ function validarId(){
       }
       }
 
-
-function ret (a, b) {
-   if (a.precio > b.precio) {
-   return 1;
-   }
-   if (a.precio < b.precio) {
-   return -1;
-   }
-   return 0;
-};
 
 function validarFormularioUno(e) {
    e.preventDefault();
