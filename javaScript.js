@@ -1,11 +1,13 @@
-
+//Toma si hay algo en storage para ver que opciones poner en el menu del encabezado
 let perfil = localStorage.getItem("usuario");
 console.log(perfil);
 
-if (perfil==null){
-let modalCuenta = document.getElementById("modcuenta")
-modalCuenta.innerHTML += `
-   <a data-toggle="modal" data-target="#myModal3" class="encabezado-de-pagina__logueo"id="cuenta" href="">Cuenta</a>
+//si no esta logueado aparecen los modal para loguear a la cuenta
+
+if (perfil == null) {
+   let modalCuenta = document.getElementById("modcuenta")
+   modalCuenta.innerHTML += `
+   <a data-toggle="modal" data-target="#myModal3" class="encabezado-de-pagina__logueo"id="cuenta" href="">Loguear</a>
    <div class="modal fade" id="myModal3">
    <div class="modal-dialog">
        <div class="modal-content">    
@@ -31,105 +33,107 @@ modalCuenta.innerHTML += `
    </div>
    </div>  
    `
+   //llamada funcion validar logueo
+
    let formularioLog = document.getElementById("formularioLog");
-   formularioLog.addEventListener("submit", validarFormularioLog);
-   }
-else{
-let usuario = document.getElementById("modcuenta");
-usuario.innerHTML += `
+   formularioLog.addEventListener("submit", validarFormularioLog); 
+}
+   //si esta logueado aparece menu desplegable para desconectar e ir al carrito
+else {
+   let usuario = document.getElementById("modcuenta");
+   usuario.innerHTML += `
 <li><a id=cuenta href="">Cuenta</a>
       <ul class="options">
             <li><a href="carrito.html">Carrito de compra</a></li>
             <li><a id="disconect" href="">Desconectar</a></li>
       </ul>
       `
-      const cuenta = document.getElementById("cuenta");
-      cuenta.innerText = (localStorage.getItem("usuario"));
-      const disc = document.getElementById("disconect");
-      disc.onclick = () => localStorage.clear();
-      
-      }
-//eventos
+   const cuenta = document.getElementById("cuenta");
+   cuenta.innerText = (localStorage.getItem("usuario"));
+   const disc = document.getElementById("disconect");
+   disc.onclick = () => localStorage.clear();
 
-let primerFormulario = document.getElementById("formulario1");
-primerFormulario.addEventListener("submit", validarFormularioUno);
+}
+//llamada a funcion validar para formulario recomendacion y contacto del foother
 
-let segundoFormulario = document.getElementById("formulario2");
-segundoFormulario.addEventListener("submit",validarFormularioDos);
+let formularioContacto = document.getElementById("formularioContacto");
+formularioContacto.addEventListener("submit", validarFormularioContacto);
+
+let formularioRecomendacion = document.getElementById("formularioRecomendacion");
+formularioRecomendacion.addEventListener("submit", validarFormularioRecomendacion);
 
 
 // DOM
 console.dir(document.body);
 
-   //Funciones
+//Funciones
 
-function validarsn(){
-while ((respuesta !=="s")&&(respuesta !=="n"))
-{
-   respuesta=prompt("valor ingresado es erroneo , vuelva a ingresar s para si o n para no");
-}
-}
+//validacion mail ,nombre, apellido y si escribio algo en formulario contacto
 
-function validarId(){    
-      while (idJuego=="")
-      {
-      idJuego=prompt("Error , no ingreso una id");
-      }
-      }
-
-
-function validarFormularioUno(e) {
+function validarFormularioContacto(e) {
    e.preventDefault();
-   var nombre = document.getElementById('formGroupExampleInput').value;
-if(nombre.length == 0) {
-   alert("No has escrito nada en el nombre");
-   return false;
-}
-var apellido = document.getElementById('formGroupExampleInput2').value;
-if(apellido.length == 0) {
-   alert("No has escrito nada en el apellido");
-   return;
-}
-var mail = document.getElementById('formGroupExampleInput3').value;
-if(mail.length == 0) {
-   alert("No has escrito nada en el mail");
-   return;
-}
-var text = document.getElementById('textAreaUno').value;
-if(text.length == 0) {
-   alert("No nos ha escrito nada");
-   return;
-}
-this.submit();
+   var nombre = document.getElementById('formNombre').value;
+   if (nombre.length < 4) {
+      alert("No ha escrito un nombre correcto");
+      return false;
+   }
+   var apellido = document.getElementById('formApellido').value;
+   if (apellido.length < 4) {
+      alert("No ha escrito un apellido valido");
+      return;
+   }
+
+   var mail = document.getElementById('formMail').value;
+   var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+   var mailValido = expReg.test(mail)
+   if (mailValido == false) {
+      alert("No has escrito un mail valido");
+      return;
+   }
+
+
+   
+   var text = document.getElementById('textAreaUno').value;
+   if (text.length < 10) {
+      alert("Ha escrito un mensaje muy corto o vacio");
+      return;
+   }
+   this.submit();
 }
 
-function validarFormularioDos(e) {
+//validacion nombre y si escribio algo en recomendaciones 
+
+function validarFormularioRecomendacion(e) {
    e.preventDefault();
    var nombre = document.getElementById('nombre').value;
-if(nombre.length == 0) {
-   alert("No has escrito nada en el nombre");
-   return;
-}
-var text = document.getElementById('textAreaDos').value;
-if(text.length == 0) {
-   alert("No has escrito ninguna recomendacion");
-   return;
-}
-this.submit();
+   if (nombre.length < 4) {
+      alert("No ha escrito un nombre valido");
+      return;
+   }
+   var text = document.getElementById('textAreaDos').value;
+   if (text.length < 10) {
+      alert("Ha escrito una recomendacion muy corta o vacia");
+      return;
+   }
+   this.submit();
 }
 
+
+//Validacion logueo usuario y contraseña
 function validarFormularioLog(e) {
    e.preventDefault();
-   var nombre = document.getElementById('usr').value;
-if(nombre.length == 0) {
-   alert("No has escrito un nombre de cuenta");
-   return;
-}
-localStorage.setItem('usuario',nombre);
 
-var pass = document.getElementById('pass').value;
-if(pass.length == 0) {
-   alert("No has escrito una contraseña");
-   return;
-}this.submit();
+   var nombre = document.getElementById('usr').value;
+   if (nombre.length < 5) {
+      alert("No has escrito un nombre de cuenta correcto - recuerde que debe tener almenos 5 caracteres");
+      return;
+   }
+   localStorage.setItem('usuario', nombre);
+
+   var pass = document.getElementById('pass').value;
+   if (pass.length < 7) {
+      alert("Su contraseña es demasiado corta");
+      return;
+   }
+   this.submit();
 }

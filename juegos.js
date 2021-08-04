@@ -1,22 +1,20 @@
-let total=0;
-let idJuego;
+let total = 0;
 let carrito = [];
-let contador=0;
 
+//declaro el uso de el array en un archivo .json y creo los div con los juegos
 
-//ajax
-
-
-
-const URLJSON="juegos.json";
+const URLJSON = "juegos.json";
 $.getJSON(URLJSON, function (respuesta, estado) {
-   if(estado == "success"){
-   let juegos = respuesta.juegos;
-   for (let i=0;i<juegos.length;i++) {
-   $("#productos").append(`<div class="card"> <br>
-   <h1> ${juegos[i].nombre} </h1>
+   if (estado == "success") {
+      let juegos = respuesta.juegos;
+      for (let i = 0; i < juegos.length; i++) {
+         $("#productos").append(`
+      
+   <div class="card">
 
-   <p> Precio: ${juegos[i].precio} </p>
+   <h1 class="tituloJuego"> ${juegos[i].nombre} </h1>
+
+   <p> Precio: ${juegos[i].precio} AR$ </p>
 
    <p> Género: ${juegos[i].genero} </p>
 
@@ -26,26 +24,33 @@ $.getJSON(URLJSON, function (respuesta, estado) {
 
 
    </div><br><br>`)
-   let compra = document.getElementById(`botompra${juegos[i].id}`);
-console.log(juegos[i]);
 
-compra.addEventListener('click', () => {
-   agregarCarrito(juegos[i])
-}
+   //Llamada funcion agregar al carrito cuando se apreta el boton comprar.
 
-)}
+         let compra = document.getElementById(`botompra${juegos[i].id}`);
+         console.log(juegos[i]);
 
-}    
+         compra.addEventListener('click', () => {
+            agregarCarrito(juegos[i])
+         }
+
+         )
+      }
+
+   }
 });
 
+//Toma si hay algo en storage para ver que opciones poner en el menu del encabezado
 
 let perfil = localStorage.getItem("usuario");
 console.log(perfil);
 
-if (perfil==null){
-let modalCuenta = document.getElementById("modcuenta")
-modalCuenta.innerHTML += `
-   <a data-toggle="modal" data-target="#myModal3" class="encabezado-de-pagina__logueo"id="cuenta" href="">Cuenta</a>
+//si no esta logueado aparecen los modal para loguear a la cuenta
+
+if (perfil == null) {
+   let modalCuenta = document.getElementById("modcuenta")
+   modalCuenta.innerHTML += `
+   <a data-toggle="modal" data-target="#myModal3" class="encabezado-de-pagina__logueo"id="cuenta" href="">Loguear</a>
    <div class="modal fade" id="myModal3">
    <div class="modal-dialog">
        <div class="modal-content">    
@@ -71,140 +76,120 @@ modalCuenta.innerHTML += `
    </div>
    </div>  
    `
+   //llamada funcion validar logueo
+   
    let formularioLog = document.getElementById("formularioLog");
    formularioLog.addEventListener("submit", validarFormularioLog);
-   }
-else{
-let usuario = document.getElementById("modcuenta");
-usuario.innerHTML += `
+}
+//si esta logueado aparece menu desplegable para desconectar e ir al carrito
+else {
+   let usuario = document.getElementById("modcuenta");
+   usuario.innerHTML += `
 <li><a id=cuenta href="">Cuenta</a>
       <ul class="options">
             <li><a id="carro" href="carrito.html">Carrito de compra</a></li>
             <li><a id="disconect" href="">Desconectar</a></li>
       </ul>
       `
-      const cuenta = document.getElementById("cuenta");
-      cuenta.innerText = (localStorage.getItem("usuario"));
-      const disc = document.getElementById("disconect");
-      disc.onclick = () => localStorage.clear();
-      let carro = document.getElementById("carro");
-      carro.onclick = () => VerCarrito();
-      }
-     
-//eventos
+   const cuenta = document.getElementById("cuenta");
+   cuenta.innerText = (localStorage.getItem("usuario"));
+   const disc = document.getElementById("disconect");
+   disc.onclick = () => localStorage.clear();
+   let carro = document.getElementById("carro");
+   carro.onclick = () => VerCarrito();
+}
 
-let primerFormulario = document.getElementById("formulario1");
-primerFormulario.addEventListener("submit", validarFormularioUno);
+//llamada a funcion validar para formulario recomendacion y contacto del foother
 
-let segundoFormulario = document.getElementById("formulario2");
-segundoFormulario.addEventListener("submit",validarFormularioDos);
+let formularioContacto = document.getElementById("formularioContacto");
+formularioContacto.addEventListener("submit", validarFormularioContacto);
+
+let formularioRecomendacion = document.getElementById("formularioRecomendacion");
+formularioRecomendacion.addEventListener("submit", validarFormularioRecomendacion);
 
 // DOM
 console.dir(document.body);
 
-//juegoss
-
-   function baratos () {
-      const juegosBaratos = juegos.filter(elemento => elemento.precio <= 200);
-      console.log("los juegos en oferta son ");
-      console.log(juegosBaratos);
-   }
+//funcion agregar carrito al apretar el boton comprar
 
 function agregarCarrito(juegos) {
+
    carrito.push(juegos);
    console.log(carrito);
-   
-   contador++;
-   $(".card").append(`<br><t>Recuerde que ya ha comprado ${juegos.nombre} hasta el momento</t> `)
-   
-
+   swal("Juego agregado al carrito!", "Podra verlo en la seccion carrito!", "success");
+   localStorage.setItem("Juego", JSON.stringify(carrito));
 };
 
+//funcion para ver por consola el carrito actualmente
 
 function VerCarrito() {
    console.log("este es el carrito actualmente");
 
-   localStorage.setItem("Juego",JSON.stringify(carrito));
-
-}
-   
-function validarsn(){
-while ((respuesta !=="s")&&(respuesta !=="n"))
-{
-   respuesta=prompt("valor ingresado es erroneo , vuelva a ingresar s para si o n para no");
-}
 }
 
-function validarId(){    
-      while (idJuego=="")
-      {
-      idJuego=prompt("Error , no ingreso una id");
-      }
-      }
+//validacion mail ,nombre, apellido y si escribio algo en formulario contacto
 
-
-function ret (a, b) {
-   if (a.precio > b.precio) {
-   return 1;
-   }
-   if (a.precio < b.precio) {
-   return -1;
-   }
-   return 0;
-};
-
-function validarFormularioUno(e) {
+function validarFormularioContacto(e) {
    e.preventDefault();
-   var nombre = document.getElementById('formGroupExampleInput').value;
-if(nombre.length == 0) {
-   alert("No has escrito nada en el nombre");
-   return false;
-}
-var apellido = document.getElementById('formGroupExampleInput2').value;
-if(apellido.length == 0) {
-   alert("No has escrito nada en el apellido");
-   return;
-}
-var mail = document.getElementById('formGroupExampleInput3').value;
-if(mail.length == 0) {
-   alert("No has escrito nada en el mail");
-   return;
-}
-var text = document.getElementById('textAreaUno').value;
-if(text.length == 0) {
-   alert("No nos ha escrito nada");
-   return;
-}
-this.submit();
-}
+   var nombre = document.getElementById('formNombre').value;
+   if (nombre.length < 4) {
+      alert("No ha escrito un nombre correcto");
+      return false;
+   }
+   var apellido = document.getElementById('formApellido').value;
+   if (apellido.length < 4) {
+      alert("No ha escrito un apellido valido");
+      return;
+   }
 
-function validarFormularioDos(e) {
+   var mail = document.getElementById('formMail').value;
+   var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+   var mailValido = expReg.test(mail)
+   if (mailValido == false) {
+      alert("No has escrito un mail valido");
+      return;
+   }
+
+   var text = document.getElementById('textAreaUno').value;
+   if (text.length < 10) {
+      alert("Ha escrito un mensaje muy corto o vacio");
+      return;
+   }
+   this.submit();
+}
+//validacion nombre y si escribio algo en recomendaciones
+
+function validarFormularioRecomendacion(e) {
    e.preventDefault();
    var nombre = document.getElementById('nombre').value;
-if(nombre.length == 0) {
-   alert("No has escrito nada en el nombre");
-   return;
+   if (nombre.length < 4) {
+      alert("No ha escrito un nombre valido");
+      return;
+   }
+   var text = document.getElementById('textAreaDos').value;
+   if (text.length < 10) {
+      alert("Ha escrito una recomendacion muy corta o vacia");
+      return;
+   }
+   this.submit();
 }
-var text = document.getElementById('textAreaDos').value;
-if(text.length == 0) {
-   alert("No has escrito ninguna recomendacion");
-   return;
-}
-this.submit();
-}
+
+//Validacion logueo usuario y contraseña
 
 function validarFormularioLog(e) {
    e.preventDefault();
-   var nombre = document.getElementById('usr').value;
-if(nombre.length == 0) {
-   alert("No has escrito un nombre de cuenta");
-   return;
-}
-localStorage.setItem('usuario',nombre);
 
-var pass = document.getElementById('pass').value;
-if(pass.length == 0) {
-   alert("No has escrito una contraseña");
-   return;
-}this.submit();
+   var nombre = document.getElementById('usr').value;
+   if (nombre.length < 5) {
+      alert("No has escrito un nombre de cuenta correcto - recuerde que debe tener almenos 5 caracteres");
+      return;
+   }
+   localStorage.setItem('usuario', nombre);
+
+   var pass = document.getElementById('pass').value;
+   if (pass.length < 7) {
+      alert("Su contraseña es demasiado corta");
+      return;
+   }
+   this.submit();
 }

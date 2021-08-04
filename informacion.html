@@ -35,76 +35,76 @@
 
 <footer>
 
- <!--pie de pagina-->
- <div class="pie-de-pagina" > 
-    <a href="informacion.html" class="pie-de-pagina__informacion">Información</a> <br>
-    <a href="Mapadesitio.html"class="pie-de-pagina__mapa">Mapa del sitio</a><br>
-<!-- Modal Mail -->
-    <a data-toggle="modal" data-target="#myModal" class="pie-de-pagina__mail" href="">Mail de contacto</a> 
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">    
-                <div class="modal-header">
-                    <h4 class="modal-title">Ponte en contacto con nosotros</h4>
-                    <button type="button" class="close" data-dismiss="modal" id="botonClose">&times;</button>
+    <!--pie de pagina-->
+    <div class="pie-de-pagina" > 
+            <a href="informacion.html" class="pie-de-pagina__informacion">Información</a> <br>
+            <a href="Mapadesitio.html"class="pie-de-pagina__mapa">Mapa del sitio</a><br>
+    <!-- Modal Mail -->
+            <a data-toggle="modal" data-target="#myModal" class="pie-de-pagina__mail"href="">Mail de contacto</a> 
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">    
+                        <div class="modal-header">
+                            <h4 class="modal-title">Ponte en contacto con nosotros</h4>
+                            <button type="button" class="close" data-dismiss="modal" id="botonClose">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="formularioContacto">
+                                <legend>Informacion personal</legend>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="formNombre">Nombre</label>
+                                    <input type="text" class="form-control" id="formNombre" placeholder="Ingrese su nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formApellido">Apellido</label>
+                                    <input type="text" class="form-control" id="formApellido" placeholder="Ingrese su apellido">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formMail">Mail</label>
+                                    <input type="text" class="form-control" id="formMail" placeholder="Ingrese su mail">
+                                </div>
+                            </fieldset>
+    <!--texto a enviarnos-->
+                                <p>¿Que le gustaria decirnos?</p>
+                                <textarea rows="5" cols="35" id="textAreaUno"></textarea><br><br>
+                                <input type="submit" value="Enviar comentario" />
+                                <input type="reset" value="Borrar Comentario" />
+                            </form>
+                        </div>    
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form id="formulario1">
-                        <legend>Informacion personal</legend>
-                    <fieldset>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput">Nombre</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Apellido</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su apellido">
-                        </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Mail</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Ingrese su mail">
-                        </div>
-                    </fieldset>
-<!--texto a enviarnos-->
-                        <p>¿Que le gustaria decirnos?</p>
-                        <textarea rows="5" cols="35" id="textAreaUno"></textarea><br><br>
-                        <input type="submit" value="Enviar comentario" />
-                        <input type="reset" value="Borrar Comentario" />
-                    </form>
-                </div>    
+            </div>
+    <!-- Modal recomendaciones -->
+        <a data-toggle="modal" data-target="#myModal2" class="pie-de-pagina__recomendaciones"href="">Recomendaciones</a>
+        <div class="modal fade" id="myModal2">
+            <div class="modal-dialog">
+                <div class="modal-content">    
+                    <div class="modal-header">
+                        <h5 class="modal-title">Que te gustaria Recomendarnos?</h5>
+                        <button type="button" class="close" data-dismiss="modal" id="botonClose">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formularioRecomendacion">
+                            <label for="nombre">Nombre:</label>
+                            <input type="name" nombre="nombre" id="nombre"/><br><br>
+                            <P>Escribinos tu Recomendacion</P>
+                            <textarea rows="5" cols="35" id="textAreaDos"></textarea><br><br>
+                            <input type="submit" value="Enviar sugerencia">
+                            <input type="reset" value="Borrar sugerencia">
+                        </form>
+                    </div>    
+                </div>
             </div>
         </div>
+        <img src="media/mail.png" class="pie-de-pagina__icono-mail">
+        <img src="media/info.png" class="pie-de-pagina__icono-info">
+        <img src="media/reco.png" class="pie-de-pagina__icono-reco">
+        <img src="media/mapa.png" class="pie-de-pagina__icono-mapa">
+        <t class="pie-de-pagina__slogan alinearGridCentro">NUNCA DESAFIES A UN TRP SI TU INTENCION ES SALIR VICTORIOSO DE ESE CAMPO DE BATALLA</t>
     </div>
-<!-- Modal recomendaciones -->
-<a data-toggle="modal" data-target="#myModal2" class="pie-de-pagina__recomendaciones"href="">Recomendaciones</a>
-<div class="modal fade" id="myModal2">
-    <div class="modal-dialog">
-        <div class="modal-content">    
-            <div class="modal-header">
-                <h5 class="modal-title">Que te gustaria Recomendarnos?</h5>
-                <button type="button" class="close" data-dismiss="modal" id="botonClose">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="formulario2">
-                    <label for="nombre">Nombre:</label>
-                    <input type="name" nombre="nombre" id="nombre"/><br><br>
-                    <P>Escribinos tu Recomendacion</P>
-                    <textarea rows="5" cols="35" id="textAreaDos"></textarea><br><br>
-                    <input type="submit" value="Enviar sugerencia">
-                    <input type="reset" value="Borrar sugerencia">
-                </form>
-            </div>    
-        </div>
-    </div>
-</div>
-<img src="media/mail.png" class="pie-de-pagina__icono-mail">
-<img src="media/info.png" class="pie-de-pagina__icono-info">
-<img src="media/reco.png" class="pie-de-pagina__icono-reco">
-<img src="media/mapa.png" class="pie-de-pagina__icono-mapa">
-<t class="pie-de-pagina__slogan alinearGridCentro">NUNCA DESAFIES A UN TRP SI TU INTENCION ES SALIR VICTORIOSO DE ESE CAMPO DE BATALLA</t>
-</div>
-<a href="index.html" alt="logo trp"><img src="media/logo.png" class="logo-dos"></a>
-</footer>
+        <a href="index.html" alt="logo trp"><img src="media/logo.png" class="logo-dos"></a>
+    </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
