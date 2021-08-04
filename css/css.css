@@ -6,7 +6,23 @@ html {
     text-decoration: underline; }
 
 .card {
-  font-size: 90%; }
+  font-size: 90%;
+  border: solid black;
+  text-align: center; }
+
+.tituloJuego {
+  text-decoration: underline;
+  font-family: 'Reenie Beanie';
+  font-size: 50px; }
+
+.welcome {
+  text-align: center; }
+
+#saludo {
+  text-align: center; }
+
+#buelec {
+  text-align: center; }
 
 .botompra {
   background-color: rgba(129, 67, 67, 0.12);
@@ -992,3 +1008,699 @@ body {
 .logo-dos:hover {
   animation: 3s rotate linear infinite;
   transform-origin: 50% 50%; }
+
+@media (max-width: 1280px) {
+  .encabezado-de-pagina {
+    background-image: linear-gradient(180deg, #b32929);
+    font-size: 50px;
+    height: 120px;
+    display: grid;
+    grid-template-areas: "logo menuu menuu trp trp trp";
+    grid-template-rows: 3fr;
+    grid-template-columns: 90px 1fr 10fr;
+    font-family: 'Reenie Beanie', cursive; }
+    .encabezado-de-pagina .encabezado-de-pagina__trp-grande {
+      font-size: 110px;
+      color: snow;
+      grid-area: trp;
+      animation-duration: 2s;
+      animation-name: titilar;
+      animation-iteration-count: infinite;
+      font-family: 'Reenie Beanie', cursive; }
+    .encabezado-de-pagina .encabezado-de-pagina__logo-pagina {
+      width: 90px;
+      height: 90px;
+      padding-right: 20px;
+      grid-area: logo; }
+    .encabezado-de-pagina .menu-encabezado {
+      grid-area: menuu;
+      position: relative;
+      list-style: none;
+      font-size: 23px; }
+      .encabezado-de-pagina .menu-encabezado li {
+        display: inline;
+        position: relative;
+        font-size: 23px; }
+      .encabezado-de-pagina .menu-encabezado .integrantes {
+        position: absolute;
+        left: 20px;
+        display: none;
+        background-image: linear-gradient(180deg, #b32929 0%, black 42%, #a44de7 100%);
+        z-index: 100; }
+        .encabezado-de-pagina .menu-encabezado .integrantes li {
+          display: block; }
+      .encabezado-de-pagina .menu-encabezado li:hover .integrantes {
+        display: block; }
+  .pie-de-pagina {
+    background-image: linear-gradient(180deg #523469);
+    color: snow;
+    height: 120px;
+    display: grid;
+    grid-template-areas: "info informacion informacion informacion" "map mapa slogan logo-dos" "imail mail slogan logo-dos" "reco recomendaciones recomendaciones recomendaciones ";
+    grid-template-columns: 30px 1fr 2fr 1fr;
+    grid-template-rows: 30px 30px 30px 30px;
+    font-family: 'Reenie Beanie', cursive; }
+    .pie-de-pagina textarea {
+      background-color: #1f1e1e;
+      border-color: snow;
+      color: snow;
+      font-family: 'Reenie Beanie', cursive;
+      width: 500px;
+      font-size: 20px;
+      column-width: 1px; }
+    .pie-de-pagina input {
+      border-color: snow;
+      background-color: #1f1e1e;
+      color: snow;
+      font-family: 'Reenie Beanie', cursive;
+      font-size: 35px; }
+    .pie-de-pagina label {
+      font-size: 20px;
+      color: snow; }
+    .pie-de-pagina legend {
+      font-size: 20px;
+      color: snow; }
+    .pie-de-pagina .pie-de-pagina__icono-mail {
+      grid-area: imail;
+      width: 30px;
+      height: 30px; }
+    .pie-de-pagina .pie-de-pagina__icono-info {
+      grid-area: info;
+      width: 30px;
+      height: 30px; }
+    .pie-de-pagina .pie-de-pagina__icono-reco {
+      grid-area: reco;
+      width: 30px;
+      height: 30px; }
+    .pie-de-pagina .pie-de-pagina__icono-mapa {
+      grid-area: map;
+      width: 30px;
+      height: 30px; }
+    .pie-de-pagina .pie-de-pagina__informacion {
+      grid-area: informacion;
+      font-size: 30px; }
+    .pie-de-pagina .pie-de-pagina__mapa {
+      grid-area: mapa;
+      font-size: 30px; }
+    .pie-de-pagina .pie-de-pagina__mail {
+      grid-area: mail;
+      font-size: 30px;
+      text-decoration: underline; }
+    .pie-de-pagina .pie-de-pagina__recomendaciones {
+      grid-area: recomendaciones;
+      font-size: 30px;
+      text-decoration: underline; }
+    .pie-de-pagina .pie-de-pagina__slogan {
+      grid-area: slogan;
+      font-size: 25px; }
+    .pie-de-pagina a {
+      color: snow;
+      font-size: 30px; }
+    .pie-de-pagina p {
+      color: snow;
+      font-size: 30px; }
+  /* Logo 2 */
+  .logo-dos {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    grid-area: logo-dos;
+    z-index: 100;
+    transition: 3seg; }
+  a.cuerpo-index__galeria {
+    display: inline-block;
+    position: relative;
+    color: snow;
+    left: -470px;
+    top: -20px;
+    cursor: pointer;
+    border: 5px solid;
+    border-color: snow;
+    background-color: black;
+    padding: .375rem .75rem;
+    border-radius: 50rem;
+    line-height: normal;
+    outline-offset: 2px;
+    font-size: 25px; }
+  #cont .banner {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "igtrp ytbtrp" "bannerDrax bannerDiego" "bannerAylen bannerPrincess";
+    grid-template-rows: 135px 1fr 1fr;
+    grid-template-columns: 1fr 1fr; }
+    #cont .banner .banner__bdrax {
+      grid-area: bannerDrax;
+      width: 100%; }
+    #cont .banner .banner__bdiego {
+      grid-area: bannerDiego;
+      width: 100%; }
+    #cont .banner .banner__baylen {
+      grid-area: bannerAylen;
+      width: 100%; }
+    #cont .banner .banner__bprincess {
+      grid-area: bannerPrincess;
+      width: 100%; }
+    #cont .banner .banner__igtrp {
+      grid-area: igtrp;
+      width: 100%; }
+    #cont .banner .banner__ytbtrp {
+      grid-area: ytbtrp;
+      width: 100%; } }
+
+/*tablet*/
+@media (max-width: 1024px) {
+  .encabezado-de-pagina {
+    background-image: linear-gradient(180deg, #b32929);
+    font-size: 40px;
+    height: 120px;
+    display: grid;
+    grid-template-areas: "logo menuu menuu trp trp trp";
+    grid-template-rows: 3fr;
+    grid-template-columns: 90px 1fr 10fr;
+    font-family: 'Reenie Beanie', cursive; }
+    .encabezado-de-pagina .encabezado-de-pagina__trp-grande {
+      font-size: 70px;
+      color: snow;
+      grid-area: trp;
+      animation-duration: 2s;
+      animation-name: titilar;
+      animation-iteration-count: infinite;
+      font-family: 'Reenie Beanie', cursive; }
+    .encabezado-de-pagina .encabezado-de-pagina__logo-pagina {
+      width: 90px;
+      height: 90px;
+      padding-right: 20px;
+      grid-area: logo; }
+    .encabezado-de-pagina .menu-encabezado {
+      grid-area: menuu;
+      position: relative;
+      list-style: none;
+      font-size: 20px; }
+      .encabezado-de-pagina .menu-encabezado li {
+        display: inline;
+        position: relative;
+        font-size: 20px; }
+      .encabezado-de-pagina .menu-encabezado .integrantes {
+        position: absolute;
+        left: 20px;
+        display: none;
+        background-image: linear-gradient(180deg, #b32929 0%, black 42%, #a44de7 100%);
+        z-index: 100; }
+        .encabezado-de-pagina .menu-encabezado .integrantes li {
+          display: block; }
+      .encabezado-de-pagina .menu-encabezado li:hover .integrantes {
+        display: block; }
+  .pie-de-pagina {
+    background-image: linear-gradient(180deg #523469);
+    color: snow;
+    height: 120px;
+    font-size: 25px;
+    display: grid;
+    grid-template-areas: "info informacion informacion informacion" "map mapa slogan logo-dos" "imail mail slogan logo-dos" "reco recomendaciones recomendaciones recomendaciones ";
+    grid-template-columns: 25px 1fr 2fr 1fr;
+    grid-template-rows: 25px 25px 25px 25px;
+    font-family: 'Reenie Beanie', cursive; }
+    .pie-de-pagina textarea {
+      background-color: #1f1e1e;
+      border-color: snow;
+      color: snow;
+      font-family: 'Reenie Beanie', cursive;
+      font-size: 25px;
+      column-width: 1px; }
+    .pie-de-pagina input {
+      border-color: snow;
+      background-color: #1f1e1e;
+      color: snow;
+      font-family: 'Reenie Beanie', cursive;
+      font-size: 25px; }
+    .pie-de-pagina label {
+      font-size: 25px;
+      color: snow; }
+    .pie-de-pagina legend {
+      font-size: 25px;
+      color: snow; }
+    .pie-de-pagina .pie-de-pagina__icono-mail {
+      grid-area: imail;
+      width: 25px;
+      height: 25px; }
+    .pie-de-pagina .pie-de-pagina__icono-info {
+      grid-area: info;
+      width: 25px;
+      height: 25px; }
+    .pie-de-pagina .pie-de-pagina__icono-reco {
+      grid-area: reco;
+      width: 25px;
+      height: 25px; }
+    .pie-de-pagina .pie-de-pagina__icono-mapa {
+      grid-area: map;
+      width: 25px;
+      height: 25px; }
+    .pie-de-pagina .pie-de-pagina__informacion {
+      grid-area: informacion;
+      font-size: 25px; }
+    .pie-de-pagina .pie-de-pagina__mapa {
+      grid-area: mapa;
+      font-size: 25px; }
+    .pie-de-pagina .pie-de-pagina__mail {
+      grid-area: mail;
+      font-size: 25px;
+      text-decoration: underline; }
+    .pie-de-pagina .pie-de-pagina__recomendaciones {
+      grid-area: recomendaciones;
+      font-size: 25px;
+      text-decoration: underline; }
+    .pie-de-pagina .pie-de-pagina__slogan {
+      grid-area: slogan;
+      font-size: 25px; }
+    .pie-de-pagina a {
+      color: snow;
+      font-size: 20px; }
+    .pie-de-pagina p {
+      color: snow;
+      font-size: 20px; }
+  /* Logo 2 */
+  .logo-dos {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    grid-area: logo-dos;
+    z-index: 100;
+    transition: 3seg; }
+  a.cuerpo-index__galeria {
+    display: inline-block;
+    position: relative;
+    color: snow;
+    left: -430px;
+    top: -20px;
+    cursor: pointer;
+    border: 5px solid;
+    border-color: snow;
+    background-color: black;
+    padding: .375rem .75rem;
+    border-radius: 50rem;
+    line-height: normal;
+    outline-offset: 2px;
+    font-size: 20px; }
+  .banner {
+    width: 100%;
+    display: grid inline-block;
+    grid-template-areas: "igtrp ytbtrp" "bannerDrax bannerDiego" "bannerAylen bannerPrincess";
+    grid-template-rows: 135px 1fr 1fr;
+    grid-template-columns: 1fr 1fr; }
+    .banner .banner__bdrax {
+      grid-area: bannerDrax;
+      width: 100%;
+      max-width: 500px; }
+    .banner .banner__bdiego {
+      grid-area: bannerDiego;
+      max-width: 500px;
+      width: 100%; }
+    .banner .banner__baylen {
+      grid-area: bannerAylen;
+      max-width: 500px;
+      width: 100%; }
+    .banner .banner__bprincess {
+      grid-area: bannerPrincess;
+      max-width: 500px;
+      width: 100%; }
+    .banner .banner__igtrp {
+      grid-area: igtrp;
+      max-width: 500px;
+      width: 100%; }
+    .banner .banner__ytbtrp {
+      max-width: 500px;
+      grid-area: ytbtrp;
+      width: 100%; } }
+
+/*mobile*/
+@media (max-width: 768px) {
+  .encabezado-de-pagina {
+    background-image: linear-gradient(180deg, #b32929);
+    font-size: 40px;
+    height: 120px;
+    display: grid;
+    grid-template-areas: "logo menuu menuu trp trp trp";
+    grid-template-rows: 3fr;
+    grid-template-columns: 90px 1fr 10fr;
+    font-family: 'Reenie Beanie', cursive; }
+    .encabezado-de-pagina .encabezado-de-pagina__trp-grande {
+      font-size: 70px;
+      color: snow;
+      grid-area: trp;
+      animation-duration: 2s;
+      animation-name: titilar;
+      animation-iteration-count: infinite;
+      font-family: 'Reenie Beanie', cursive; }
+    .encabezado-de-pagina .encabezado-de-pagina__logo-pagina {
+      width: 90px;
+      height: 90px;
+      padding-right: 20px;
+      grid-area: logo; }
+    .encabezado-de-pagina .menu-encabezado {
+      grid-area: menuu;
+      position: relative;
+      list-style: none;
+      font-size: 20px; }
+      .encabezado-de-pagina .menu-encabezado li {
+        display: inline;
+        position: relative;
+        font-size: 20px; }
+      .encabezado-de-pagina .menu-encabezado .integrantes {
+        position: absolute;
+        left: 20px;
+        display: none;
+        background-image: linear-gradient(180deg, #b32929 0%, black 42%, #a44de7 100%);
+        z-index: 100; }
+        .encabezado-de-pagina .menu-encabezado .integrantes li {
+          display: block; }
+      .encabezado-de-pagina .menu-encabezado li:hover .integrantes {
+        display: block; }
+  .pie-de-pagina {
+    background-image: linear-gradient(180deg #523469);
+    color: snow;
+    height: 120px;
+    font-size: 20px;
+    display: grid;
+    grid-template-areas: "info informacion informacion informacion" "map mapa slogan logo-dos" "imail mail slogan logo-dos" "reco recomendaciones recomendaciones recomendaciones ";
+    grid-template-columns: 20px 1fr 2fr 1fr;
+    grid-template-rows: 20px 20px 20px 20px;
+    font-family: 'Reenie Beanie', cursive; }
+    .pie-de-pagina textarea {
+      background-color: #1f1e1e;
+      border-color: snow;
+      color: snow;
+      font-family: 'Reenie Beanie', cursive;
+      font-size: 20px;
+      width: 350px;
+      column-width: 1px; }
+    .pie-de-pagina input {
+      border-color: snow;
+      background-color: #1f1e1e;
+      color: snow;
+      font-family: 'Reenie Beanie', cursive;
+      font-size: 20px; }
+    .pie-de-pagina label {
+      font-size: 20px;
+      color: snow; }
+    .pie-de-pagina legend {
+      font-size: 20px;
+      color: snow; }
+    .pie-de-pagina .pie-de-pagina__icono-mail {
+      grid-area: imail;
+      width: 20px;
+      height: 20px; }
+    .pie-de-pagina .pie-de-pagina__icono-info {
+      grid-area: info;
+      width: 20px;
+      height: 20px; }
+    .pie-de-pagina .pie-de-pagina__icono-reco {
+      grid-area: reco;
+      width: 20px;
+      height: 20px; }
+    .pie-de-pagina .pie-de-pagina__icono-mapa {
+      grid-area: map;
+      width: 20px;
+      height: 20px; }
+    .pie-de-pagina .pie-de-pagina__informacion {
+      grid-area: informacion; }
+    .pie-de-pagina .pie-de-pagina__mapa {
+      grid-area: mapa; }
+    .pie-de-pagina .pie-de-pagina__mail {
+      grid-area: mail;
+      font-size: 20px;
+      text-decoration: underline; }
+    .pie-de-pagina .pie-de-pagina__recomendaciones {
+      grid-area: recomendaciones;
+      font-size: 20px;
+      text-decoration: underline; }
+    .pie-de-pagina .pie-de-pagina__slogan {
+      grid-area: slogan;
+      font-size: 20px; }
+    .pie-de-pagina .modal-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      pointer-events: auto;
+      background-color: #2b2b2b;
+      background-clip: padding-box;
+      border: 1px solid rgba(233, 11, 11, 0.2);
+      border-radius: 0.3rem;
+      outline: 0;
+      max-height: 90%; }
+    .pie-de-pagina a {
+      color: snow;
+      font-size: 20px; }
+    .pie-de-pagina p {
+      color: snow;
+      font-size: 20px; }
+  /* Logo 2 */
+  .logo-dos {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    grid-area: logo-dos;
+    z-index: 100;
+    transition: 3seg; }
+  a.cuerpo-index__galeria {
+    display: inline-block;
+    position: relative;
+    color: snow;
+    left: -430px;
+    top: -20px;
+    cursor: pointer;
+    border: 5px solid;
+    border-color: snow;
+    background-color: black;
+    padding: .375rem .75rem;
+    border-radius: 50rem;
+    line-height: normal;
+    outline-offset: 2px;
+    font-size: 20px; }
+  #con .banner {
+    width: 100%;
+    display: grid inline-block;
+    grid-template-areas: "igtrp ytbtrp" "bannerDrax bannerDiego" "bannerAylen bannerPrincess";
+    grid-template-rows: 135px 1fr 1fr;
+    grid-template-columns: 1fr 1fr; }
+    #con .banner .banner__bdrax {
+      grid-area: bannerDrax;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__bdiego {
+      grid-area: bannerDiego;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__baylen {
+      grid-area: bannerAylen;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__bprincess {
+      grid-area: bannerPrincess;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__igtrp {
+      grid-area: igtrp;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__ytbtrp {
+      width: 340px;
+      width: 100%;
+      max-width: 340px; }
+  #botonClose {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: snow;
+    background-color: #1f1e1e; } }
+
+/*mobile bajo*/
+@media (max-width: 690px) {
+  .encabezado-de-pagina {
+    background-image: linear-gradient(180deg, #b32929);
+    font-size: 10px;
+    height: 60px;
+    display: grid;
+    grid-template-areas: "logo menuu menuu trp trp trp";
+    grid-template-rows: 3fr;
+    grid-template-columns: 20px 1fr 10fr;
+    font-family: 'Reenie Beanie', cursive; }
+    .encabezado-de-pagina .encabezado-de-pagina__trp-grande {
+      font-size: 30px;
+      color: snow;
+      grid-area: trp;
+      animation-duration: 2s;
+      animation-name: titilar;
+      animation-iteration-count: infinite;
+      font-family: 'Reenie Beanie', cursive; }
+    .encabezado-de-pagina .encabezado-de-pagina__logo-pagina {
+      width: 50px;
+      height: 50px;
+      padding-right: 20px;
+      grid-area: logo; }
+    .encabezado-de-pagina .menu-encabezado {
+      grid-area: menuu;
+      position: relative;
+      list-style: none;
+      font-size: 10px; }
+      .encabezado-de-pagina .menu-encabezado li {
+        display: inline;
+        position: relative;
+        font-size: 10px; }
+      .encabezado-de-pagina .menu-encabezado .integrantes {
+        position: absolute;
+        left: 10px;
+        display: none;
+        background-image: linear-gradient(180deg, #b32929 0%, black 42%, #a44de7 100%);
+        z-index: 100; }
+        .encabezado-de-pagina .menu-encabezado .integrantes li {
+          display: block; }
+      .encabezado-de-pagina .menu-encabezado li:hover .integrantes {
+        display: block; }
+  .pie-de-pagina {
+    background-image: linear-gradient(180deg #523469);
+    color: snow;
+    height: 60px;
+    font-size: 10px;
+    display: grid;
+    grid-template-areas: "info informacion informacion informacion" "map mapa slogan logo-dos" "imail mail slogan logo-dos" "reco recomendaciones recomendaciones recomendaciones ";
+    grid-template-columns: 10px 1fr 2fr 1fr;
+    grid-template-rows: 10px 10px 10px 10px;
+    font-family: 'Reenie Beanie', cursive; }
+    .pie-de-pagina textarea {
+      background-color: #1f1e1e;
+      border-color: snow;
+      color: snow;
+      font-family: 'Reenie Beanie', cursive;
+      font-size: 10px;
+      column-width: 1px; }
+    .pie-de-pagina input {
+      border-color: snow;
+      background-color: #1f1e1e;
+      color: snow;
+      font-family: 'Reenie Beanie', cursive;
+      font-size: 10px; }
+    .pie-de-pagina label {
+      font-size: 10px;
+      color: snow; }
+    .pie-de-pagina legend {
+      font-size: 10px;
+      color: snow; }
+    .pie-de-pagina .pie-de-pagina__icono-mail {
+      grid-area: imail;
+      width: 10px;
+      height: 10px; }
+    .pie-de-pagina .pie-de-pagina__icono-info {
+      grid-area: info;
+      width: 10px;
+      height: 10px; }
+    .pie-de-pagina .pie-de-pagina__icono-reco {
+      grid-area: reco;
+      width: 10px;
+      height: 10px; }
+    .pie-de-pagina .pie-de-pagina__icono-mapa {
+      grid-area: map;
+      width: 10px;
+      height: 10px; }
+    .pie-de-pagina .pie-de-pagina__informacion {
+      grid-area: informacion;
+      font-size: 10px; }
+    .pie-de-pagina .pie-de-pagina__mapa {
+      grid-area: mapa;
+      font-size: 10px; }
+    .pie-de-pagina .pie-de-pagina__mail {
+      grid-area: mail;
+      font-size: 10px;
+      text-decoration: underline; }
+    .pie-de-pagina .pie-de-pagina__recomendaciones {
+      grid-area: recomendaciones;
+      font-size: 10px;
+      text-decoration: underline; }
+    .pie-de-pagina .pie-de-pagina__slogan {
+      grid-area: slogan;
+      font-size: 10px; }
+    .pie-de-pagina a {
+      color: snow;
+      font-size: 10px; }
+    .pie-de-pagina p {
+      color: snow;
+      font-size: 10px; }
+    .pie-de-pagina #botonClose {
+      width: 20px;
+      height: 20px;
+      font-size: 10px;
+      color: snow;
+      background-color: #1f1e1e; }
+    .pie-de-pagina .modal-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      pointer-events: auto;
+      background-color: #2b2b2b;
+      background-clip: padding-box;
+      border: 1px solid rgba(233, 11, 11, 0.2);
+      border-radius: 0.3rem;
+      outline: 0;
+      max-height: 90%; }
+  /* Logo 2 */
+  .logo-dos {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 10px;
+    bottom: 5px;
+    grid-area: logo-dos;
+    z-index: 100;
+    transition: 3seg; }
+  a.cuerpo-index__galeria {
+    display: inline-block;
+    position: relative;
+    color: snow;
+    left: 5px;
+    top: -20px;
+    cursor: pointer;
+    border: 1px;
+    border-color: snow;
+    background-color: black;
+    padding: .375rem .75rem;
+    border-radius: 50rem;
+    line-height: normal;
+    outline-offset: 2px;
+    font-size: 10px; }
+  #con .banner {
+    width: 100%;
+    display: grid inline-block;
+    grid-template-areas: "igtrp ytbtrp" "bannerDrax bannerDiego" "bannerAylen bannerPrincess";
+    grid-template-rows: 135px 1fr 1fr;
+    grid-template-columns: 1fr 1fr; }
+    #con .banner .banner__bdrax {
+      grid-area: bannerDrax;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__bdiego {
+      grid-area: bannerDiego;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__baylen {
+      grid-area: bannerAylen;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__bprincess {
+      grid-area: bannerPrincess;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__igtrp {
+      grid-area: igtrp;
+      width: 100%;
+      max-width: 340px; }
+    #con .banner .banner__ytbtrp {
+      width: 340px;
+      width: 100%;
+      max-width: 340px; } }
